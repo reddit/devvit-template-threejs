@@ -1,0 +1,115 @@
+/* Global resets */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  color: #ffffff;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: #000000;
+}
+
+/* Three.js canvas fills the screen */
+#bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* Overlay container sitting above the canvas */
+.overlay {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  text-align: center;
+  padding: 0 16px;
+  pointer-events: none; /* allow clicks to pass through except on interactive elements */
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1.2;
+  pointer-events: auto;
+}
+
+.description {
+  font-size: 1rem;
+  color: #d1d5db;
+  pointer-events: auto;
+}
+
+.code {
+  background-color: rgba(255, 255, 255, 0.15);
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+/* Counter styles */
+.counter-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 12px;
+  pointer-events: auto;
+}
+
+.counter-button {
+  background-color: #ff4500;
+  color: #ffffff;
+  border: none;
+  width: 60px;
+  height: 60px;
+  font-size: 2rem;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.counter-button:hover {
+  background-color: #d93900;
+}
+
+.counter-value {
+  font-size: 2rem;
+  font-weight: 600;
+  min-width: 60px;
+  text-align: center;
+}
+
+/* Footer links */
+.footer {
+  position: absolute;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 12px;
+  font-size: 0.9rem;
+  color: #d1d5db;
+  pointer-events: auto;
+}
+
+.docs-link {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.divider {
+  color: rgba(255, 255, 255, 0.25);
+}

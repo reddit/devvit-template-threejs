@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <link rel="stylesheet" type="text/css" href="style.css" />
+    <link rel="stylesheet" type="text/css" href="index.css" />
     <meta charset="UTF-8" />
     <meta
       name="viewport"
@@ -14,23 +14,22 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
   </head>
   <body>
-    <div id="container">
-      <div id="game"></div>
-      <div id="score">0</div>
-      <div id="leaderboard">
-        <div class="leaderboard-title">Top</div>
-        <div id="leaderboard-list"></div>
+    <canvas id="bg"></canvas>
+    <div class="overlay">
+      <h1 class="title" id="title"></h1>
+      <p class="description">Edit <span class="code">src/client/main.ts</span> to get started.</p>
+      <div class="counter-row">
+        <!-- Counter buttons removed. Value updated programmatically. -->
+        <span class="counter-value" id="counter-value">0</span>
       </div>
-      <div id="instructions">Click (or press the spacebar) to place the block</div>
-      <div class="game-over">
-        <h2>Game Over</h2>
-        <p id="game-over-text">Click or spacebar to start again</p>
-      </div>
-      <div class="game-ready">
-        <div id="start-button">Start</div>
-        <div></div>
-      </div>
+      <footer class="footer">
+        <div class="docs-link" tabindex="0" id="docs-link">Docs</div>
+        <span class="divider">|</span>
+        <div class="docs-link" tabindex="0" id="playtest-link">r/Devvit</div>
+        <span class="divider">|</span>
+        <div class="docs-link" tabindex="0" id="discord-link">Discord</div>
+      </footer>
     </div>
-    <script type="module" src="main.ts"></script>
+    <script type="module" src="main.ts" defer></script>
   </body>
 </html>

@@ -5,22 +5,24 @@
     "client": {
       "dir": "dist/client",
       "entry": "dist/client/index.html"
-    },
-    "create": {
-      "onInstall": false,
-      "menu": {
-        "enable": false
-      }
     }
   },
   "server": {
     "entry": "dist/server/index.cjs"
   },
   "media": {},
-  "blocks": {
-    "entry": "src/devvit/main.tsx",
-    "menu": {
-      "enable": true
-    }
+  "menu": {
+    "items": [
+      {
+        "label": "Create a new post",
+        "description": "<% name %>",
+        "location": "subreddit",
+        "forUserType": "moderator",
+        "endpoint": "/internal/menu/post-create"
+      }
+    ]
+  },
+  "triggers": {
+    "onAppInstall": "/internal/on-app-install"
   }
 }
