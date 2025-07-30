@@ -30,7 +30,3 @@ A starter to build web applications on Reddit's developer platform
 ## Cursor Integration
 
 This template comes with a pre-configured cursor environment. To get started, [download cursor](https://www.cursor.com/downloads) and enable the `devvit-mcp` when prompted.
-
-## Credits
-
-Huge thanks to [feldhaus](https://github.com/feldhaus) for [open sourcing the tower blocks code](https://github.com/feldhaus/tower-blocks)!
