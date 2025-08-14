@@ -1,5 +1,3 @@
-> 🚨 Under active development! Things may not work.
-
 ## Devvit Three.js Starter
 
 A starter to build web applications on Reddit's developer platform
