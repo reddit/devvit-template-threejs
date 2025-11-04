@@ -1,6 +1,6 @@
 import * as THREE from 'three';
 import { navigateTo } from '@devvit/client';
-import { InitResponse, IncrementResponse, DecrementResponse } from '../shared/types/api';
+import { InitResponse, IncrementResponse, DecrementResponse } from '../../shared/types/api';
 
 const titleElement = document.getElementById('title') as HTMLHeadingElement;
 const counterValueElement = document.getElementById('counter-value') as HTMLSpanElement;
