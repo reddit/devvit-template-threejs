@@ -7,5 +7,17 @@ export default defineConfig({
     outDir: '../../dist/client',
     sourcemap: true,
     chunkSizeWarningLimit: 1500,
+    rollupOptions: {
+      input: {
+        splash: 'splash/splash.html',
+        game: 'game/game.html',
+      },
+      output: {
+        entryFileNames: '[name].js',
+        chunkFileNames: '[name].js',
+        assetFileNames: '[name][extname]',
+        sourcemapFileNames: '[name].js.map',
+      },
+    },
   },
 });
