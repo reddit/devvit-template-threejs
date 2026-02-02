@@ -1,6 +1,6 @@
 import * as THREE from 'three';
 import { navigateTo } from '@devvit/client';
-import { InitResponse, IncrementResponse, DecrementResponse } from '../../shared/types/api';
+import { InitResponse, IncrementResponse, DecrementResponse } from '../shared/api';
 
 const titleElement = document.getElementById('title') as HTMLHeadingElement;
 const counterValueElement = document.getElementById('counter-value') as HTMLSpanElement;
@@ -89,9 +89,9 @@ const earthTexture = textureLoader.load('/earth_atmos_2048.jpg');
 const earthNormalMap = textureLoader.load('/earth_normal_2048.jpg');
 const earthSpecularMap = textureLoader.load('/earth_specular_2048.jpg');
 
-earthTexture.encoding = THREE.sRGBEncoding;
-earthNormalMap.encoding = THREE.LinearEncoding;
-earthSpecularMap.encoding = THREE.LinearEncoding;
+earthTexture.colorSpace = THREE.SRGBColorSpace;
+earthNormalMap.colorSpace = THREE.NoColorSpace;
+earthSpecularMap.colorSpace = THREE.NoColorSpace;
 
 const earthGeo = new THREE.SphereGeometry(10, 64, 64);
 const earthMat = new THREE.MeshPhongMaterial({
