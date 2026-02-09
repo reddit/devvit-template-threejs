@@ -1,18 +1,30 @@
 import * as THREE from 'three';
 import { navigateTo } from '@devvit/client';
-import { InitResponse, IncrementResponse, DecrementResponse } from '../../shared/types/api';
+import {
+  InitResponse,
+  IncrementResponse,
+  DecrementResponse,
+} from '../shared/api';
 
 const titleElement = document.getElementById('title') as HTMLHeadingElement;
-const counterValueElement = document.getElementById('counter-value') as HTMLSpanElement;
+const counterValueElement = document.getElementById(
+  'counter-value'
+) as HTMLSpanElement;
 // Buttons have been removed; interactions now happen on the planet mesh.
 
 const docsLink = document.getElementById('docs-link');
 const playtestLink = document.getElementById('playtest-link');
 const discordLink = document.getElementById('discord-link');
 
-docsLink?.addEventListener('click', () => navigateTo('https://developers.reddit.com/docs'));
-playtestLink?.addEventListener('click', () => navigateTo('https://www.reddit.com/r/Devvit'));
-discordLink?.addEventListener('click', () => navigateTo('https://discord.com/invite/R7yu2wh9Qz'));
+docsLink?.addEventListener('click', () =>
+  navigateTo('https://developers.reddit.com/docs')
+);
+playtestLink?.addEventListener('click', () =>
+  navigateTo('https://www.reddit.com/r/Devvit')
+);
+discordLink?.addEventListener('click', () =>
+  navigateTo('https://discord.com/invite/R7yu2wh9Qz')
+);
 
 let currentPostId: string | null = null;
 
@@ -43,7 +55,9 @@ async function updateCounter(action: 'increment' | 'decrement'): Promise<void> {
       body: JSON.stringify({}),
     });
     if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
-    const data = (await response.json()) as IncrementResponse | DecrementResponse;
+    const data = (await response.json()) as
+      | IncrementResponse
+      | DecrementResponse;
     counterValueElement.textContent = data.count.toString();
   } catch (err) {
     console.error(`Error ${action}ing count:`, err);
@@ -56,7 +70,12 @@ const canvas = document.getElementById('bg') as HTMLCanvasElement;
 const scene = new THREE.Scene();
 scene.background = new THREE.Color(0x000000);
 
-const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+const camera = new THREE.PerspectiveCamera(
+  75,
+  window.innerWidth / window.innerHeight,
+  0.1,
+  1000
+);
 camera.position.z = 30;
 
 const renderer = new THREE.WebGLRenderer({ antialias: true, canvas });
@@ -89,9 +108,9 @@ const earthTexture = textureLoader.load('/earth_atmos_2048.jpg');
 const earthNormalMap = textureLoader.load('/earth_normal_2048.jpg');
 const earthSpecularMap = textureLoader.load('/earth_specular_2048.jpg');
 
-earthTexture.encoding = THREE.sRGBEncoding;
-earthNormalMap.encoding = THREE.LinearEncoding;
-earthSpecularMap.encoding = THREE.LinearEncoding;
+earthTexture.colorSpace = THREE.SRGBColorSpace;
+earthNormalMap.colorSpace = THREE.NoColorSpace;
+earthSpecularMap.colorSpace = THREE.NoColorSpace;
 
 const earthGeo = new THREE.SphereGeometry(10, 64, 64);
 const earthMat = new THREE.MeshPhongMaterial({
