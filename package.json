@@ -24,7 +24,7 @@
     "@hono/node-server": "^1.19.9",
     "devvit": "0.12.12",
     "hono": "4.11.7",
-    "three": "0.182.0"
+    "three": "0.184.0"
   },
   "devDependencies": {
     "@eslint/js": "9.39.2",
