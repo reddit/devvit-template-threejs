@@ -23,12 +23,12 @@
     "@hono/node-server": "2.0.6",
     "devvit": "0.13.6",
     "hono": "4.12.27",
-    "three": "0.184.0"
+    "three": "0.185.1"
   },
   "devDependencies": {
     "@eslint/js": "10.0.1",
     "@types/node": "^22.19.19",
-    "@types/three": "^0.184.1",
+    "@types/three": "^0.185.0",
     "eslint": "10.5.0",
     "globals": "17.7.0",
     "prettier": "3.8.4",
