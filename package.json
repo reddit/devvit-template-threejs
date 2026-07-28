@@ -30,7 +30,7 @@
     "@types/node": "^22.19.19",
     "@types/three": "^0.185.0",
     "eslint": "10.8.0",
-    "globals": "17.7.0",
+    "globals": "17.8.0",
     "prettier": "3.9.4",
     "typescript": "7.0.2",
     "typescript-eslint": "8.65.0",
