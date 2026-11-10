@@ -37,3 +37,7 @@ updates:
         patterns:
           - "three"
           - "@types/three"
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
