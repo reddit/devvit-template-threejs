@@ -23,7 +23,7 @@
     "@devvit/web": "0.15.4",
     "@hono/node-server": "2.1.6",
     "devvit": "0.15.4",
-    "hono": "4.13.17",
+    "hono": "4.13.19",
     "three": "0.187.0"
   },
   "devDependencies": {
